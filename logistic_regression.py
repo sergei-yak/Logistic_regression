@@ -19,7 +19,7 @@ churn_df = pd.read_csv(url)
 churn_df = churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip', 'churn']]
 churn_df['churn'] = churn_df['churn'].astype('int')
 
-# For modeling the input fields X and the target field y need to be fixed. Since that the target to be predicted is 'churn', the data under this field will be stored under the variable 'y'. We may use any combination or all of the remaining fields as the input. Store these values in the variable 'X'.
+# For modeling the input fields X and the target field y need to be fixed. Since that the target to be predicted is 'churn', the data under this field will be stored under the variable 'y'.
 X = np.asarray(churn_df[['tenure', 'age', 'address', 'income', 'ed', 'employ', 'equip']])
 y = np.asarray(churn_df['churn'])
 
@@ -41,6 +41,7 @@ plt.title("Feature Coefficients in Logistic Regression Churn Model")
 plt.xlabel("Coefficient Value")
 plt.show()
 
-
-
+# Log loss (Logarithmic loss), also known as Binary Cross entropy loss, is a function that generates a loss value based on the class wise prediction probabilities and the actual class labels. 
+# The lower the log loss value, the better the model is considered to be.
+log_loss(y_test, yhat_prob)
 
